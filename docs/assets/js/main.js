@@ -114,12 +114,12 @@ if (words.length > 0) {
     // Show first word immediately
     addClass(words[0], 'active');
 
-    // Rotate words
+    // Rotate words (3 words: Cloud, On-Premises, Híbridas)
     setInterval(() => {
         removeClass(words[currentWordIndex], 'active');
         currentWordIndex = (currentWordIndex + 1) % words.length;
         addClass(words[currentWordIndex], 'active');
-    }, 2000);
+    }, 2500);
 }
 
 // ========================================
