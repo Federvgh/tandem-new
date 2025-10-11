@@ -473,15 +473,15 @@ button {
 }
 
 @keyframes wordFade {
-    0% {
+    0%, 2% {
         opacity: 0;
         transform: translateY(10px);
     }
-    3%, 14% {
+    5%, 10% {
         opacity: 1;
         transform: translateY(0);
     }
-    17%, 100% {
+    13%, 100% {
         opacity: 0;
         transform: translateY(-10px);
     }
