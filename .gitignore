@@ -1,0 +1,37 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if we add them later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
+
+# Temporary files
+*.log
+*.tmp
+.cache/
+
+# Screenshots
+Screenshot*.png
+
+# Documents - No subir al repositorio
+TandemStudio_Servicios_Cloud.pdf
+TandemStudio_Brochure_Extendido.pdf
+Cloud Support.docx
