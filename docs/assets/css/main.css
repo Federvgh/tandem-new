@@ -701,6 +701,7 @@ button {
 .clients {
     padding: var(--section-padding) 0;
     background: var(--white);
+    overflow: hidden;
 }
 
 .clients__header {
@@ -708,18 +709,45 @@ button {
     margin-bottom: 60px;
 }
 
-.clients__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+.clients__carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+.clients__track {
+    display: flex;
+    gap: 80px;
     align-items: center;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.clients__track:hover {
+    animation-play-state: paused;
 }
 
 .client__logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    flex-shrink: 0;
+    width: 200px;
+    height: 100px;
     transition: all var(--transition-normal);
 }
 
@@ -734,7 +762,16 @@ button {
 
 .client__logo:hover img {
     filter: grayscale(0%) opacity(1);
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* ========================================
@@ -1030,9 +1067,14 @@ button {
     }
 
     /* Clients */
-    .clients__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+    .clients__track {
+        gap: 60px;
+        animation: scroll 30s linear infinite;
+    }
+
+    .client__logo {
+        width: 150px;
+        height: 80px;
     }
 
     /* Partners */
@@ -1054,8 +1096,14 @@ button {
 }
 
 @media screen and (max-width: 480px) {
-    .clients__grid {
-        grid-template-columns: 1fr;
+    .clients__track {
+        gap: 40px;
+        animation: scroll 25s linear infinite;
+    }
+
+    .client__logo {
+        width: 120px;
+        height: 60px;
     }
 
     .stats__grid {
