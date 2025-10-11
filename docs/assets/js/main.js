@@ -114,12 +114,12 @@ if (words.length > 0) {
     // Show first word immediately
     addClass(words[0], 'active');
 
-    // Rotate words (3 words: Cloud, On-Premises, Híbridas)
+    // Rotate words (6 services: Monitoreo, Migraciones, Backup, Gestionados, Seguridad, Consultoría)
     setInterval(() => {
         removeClass(words[currentWordIndex], 'active');
         currentWordIndex = (currentWordIndex + 1) % words.length;
         addClass(words[currentWordIndex], 'active');
-    }, 2500);
+    }, 3000);
 }
 
 // ========================================
