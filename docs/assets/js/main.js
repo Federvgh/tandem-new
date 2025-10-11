@@ -293,7 +293,7 @@ forms.forEach(form => handleFormSubmit(form));
 // ========================================
 const preloadImages = () => {
     const images = [
-        '../Logos/tandem2.png'
+        'assets/images/logos/clients/tandem2.png'
     ];
 
     images.forEach(src => {
