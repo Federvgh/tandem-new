@@ -988,8 +988,20 @@ button {
         min-height: auto;
     }
 
+    .hero__title {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
     .hero__title-animated {
-        min-width: 300px;
+        min-width: 100%;
+        display: block;
+        position: relative;
+        min-height: 2em;
+        text-align: left;
+    }
+
+    .hero__title-animated .word {
+        font-size: 0.85em;
     }
 
     .hero__buttons {
