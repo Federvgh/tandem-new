@@ -440,6 +440,8 @@ button {
 .hero__content {
     max-width: 800px;
     animation: fadeInUp 1s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__title {
