@@ -97,9 +97,9 @@ langButtons.forEach(btn => {
 
         // Redirect to appropriate language
         if (lang === 'en') {
-            window.location.href = '/en/index.html';
+            window.location.href = '/tandem-new/en/index.html';
         } else {
-            window.location.href = '/index.html';
+            window.location.href = '/tandem-new/';
         }
     });
 });
