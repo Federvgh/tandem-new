@@ -1031,11 +1031,13 @@ button {
     }
 
     .nav__lang {
+        display: flex;
         margin-left: 0;
         margin-top: auto;
         padding-top: 24px;
         border-top: 1px solid var(--light);
         width: 100%;
+        justify-content: center;
     }
 
     .nav__dropdown-menu {
