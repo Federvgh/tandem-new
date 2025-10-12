@@ -11,25 +11,77 @@
     <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
+        <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="../index.html" class="logo"><img src="../../assets/images/logos/tandem-logo.svg" alt="Tandem Studio"></a>
-                <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="../index.html#services" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="../partners.html" class="nav__link">Partners</a></li>
-                    <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="../values.html" class="nav__link">Values</a></li>
-                    <li class="nav__item"><a href="../index.html#clients" class="nav__link">Clients</a></li>
-                    <li class="nav__item"><a href="../contact.html" class="nav__link nav__link--cta">Contact</a>                    </li>
-                </ul>
+                <a href="../../index.html" class="nav__logo">
+                    <img src="../../assets/images/logos/clients/tandem2.png" alt="Tandem Studio">
+                </a>
 
-                <!-- Language Switcher -->
-                <div class="nav__lang">
-                    <button class="lang__btn" data-lang="es" onclick="window.location.href='../../es/servicios/migraciones-cloud.html'">ES</button>
-                    <span class="lang__divider">|</span>
-                    <button class="lang__btn active" data-lang="en">EN</button>
+                <button class="nav__toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../../index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link active">
+                                Services
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="24x7-monitoring.html">24×7 Monitoring</a></li>
+                                <li><a href="managed-cloud-services.html">Managed Cloud Services</a></li>
+                                <li><a href="cloud-migrations.html">Cloud Migrations</a></li>
+                                <li><a href="backup-recovery.html">Backup & Recovery</a></li>
+                                <li><a href="security-compliance.html">Security & Compliance</a></li>
+                                <li><a href="it-consulting.html">IT Consulting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../partners.html" class="nav__link">Partners</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link">
+                                About
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="../about.html">About Us</a></li>
+                                <li><a href="../values.html">Values</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../../index.html#clients" class="nav__link">Clients</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../contact.html" class="nav__link nav__link--cta">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="nav__lang">
+                        <button class="lang__btn" data-lang="es" onclick="window.location.href='../../es/servicios/migraciones-cloud.html'">ES</button>
+                        <span class="lang__divider">|</span>
+                        <button class="lang__btn active" data-lang="en">EN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
