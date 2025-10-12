@@ -895,7 +895,7 @@ button {
     margin-bottom: 40px;
 }
 
-.footer__logo img {
+.footer__logo {
     height: 40px;
     width: auto;
     margin-bottom: 16px;
