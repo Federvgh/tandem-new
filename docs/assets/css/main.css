@@ -252,6 +252,12 @@ button {
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    width: 100%;
+}
+
+.nav__logo {
+    flex: 0 0 auto;
+    z-index: 10;
 }
 
 .nav__logo img {
@@ -262,13 +268,30 @@ button {
 .nav__menu {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
+    flex: 1 1 auto;
+    justify-content: center;
+    max-width: none;
+    overflow: visible;
 }
 
 .nav__list {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 18px;
+    margin: 0;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav__lang {
+    flex: 0 0 auto;
+    z-index: 10;
+}
+
+.nav__toggle {
+    flex: 0 0 auto;
+    z-index: 10;
 }
 
 .nav__item {
@@ -984,12 +1007,14 @@ button {
         background: var(--white);
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
         padding: 32px 24px;
-        gap: 24px;
+        gap: 32px;
         opacity: 0;
         visibility: hidden;
         transform: translateX(100%);
         transition: all var(--transition-normal);
+        overflow-y: auto;
     }
 
     .nav__menu.active {
@@ -1005,6 +1030,14 @@ button {
         gap: 16px;
     }
 
+    .nav__lang {
+        margin-left: 0;
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid var(--light);
+        width: 100%;
+    }
+
     .nav__dropdown-menu {
         position: static;
         opacity: 1;
@@ -1013,6 +1046,11 @@ button {
         box-shadow: none;
         margin-top: 8px;
         padding-left: 16px;
+        display: none;
+    }
+
+    .nav__dropdown.active .nav__dropdown-menu {
+        display: block;
     }
 
     .nav__toggle {
@@ -1371,15 +1409,25 @@ button {
 }
 
 .partner-card__logo {
-    height: 60px;
+    height: 80px;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .partner-card__logo svg {
     max-height: 100%;
+    max-width: 200px;
     width: auto;
+    height: auto;
+}
+
+.partner-card__logo img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .partner-card__name {

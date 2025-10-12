@@ -16,6 +16,7 @@
 </head>
 <body>
     <!-- Header -->
+        <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
@@ -29,45 +30,63 @@
                     <span></span>
                 </button>
 
-                <ul class="nav__menu">
-                    <li class="nav__item nav__dropdown">
-                        <a href="#" class="nav__link">
-                            Servicios
-                            <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                        <ul class="nav__dropdown-menu">
-                            <li><a href="monitoreo-24x7.html">Monitoreo 24×7</a></li>
-                            <li><a href="servicios-gestionados-cloud.html">Servicios Gestionados Cloud</a></li>
-                            <li><a href="migraciones-cloud.html">Migraciones Cloud</a></li>
-                            <li><a href="backup-recuperacion.html">Backup y Recuperación</a></li>
-                            <li><a href="seguridad-compliance.html">Seguridad y Compliance</a></li>
-                            <li><a href="consultoria-it.html">Consultoría IT</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../partners.html" class="nav__link">Partners</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../nosotros.html" class="nav__link">Nosotros</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../valores.html" class="nav__link">Valores</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../../index.html#clientes" class="nav__link">Clientes</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../contacto.html" class="nav__link nav__link--cta">Contacto</a>
-                                        </li>
-                </ul>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../../index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link active">
+                                Servicios
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="monitoreo-24x7.html">Monitoreo 24×7</a></li>
+                                <li><a href="servicios-gestionados-cloud.html">Servicios Gestionados Cloud</a></li>
+                                <li><a href="migraciones-cloud.html">Migraciones Cloud</a></li>
+                                <li><a href="backup-recuperacion.html">Backup y Recuperación</a></li>
+                                <li><a href="seguridad-compliance.html">Seguridad y Compliance</a></li>
+                                <li><a href="consultoria-it.html">Consultoría IT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../partners.html" class="nav__link">Partners</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link">
+                                Nosotros
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="../nosotros.html">Quiénes Somos</a></li>
+                                <li><a href="../valores.html">Valores</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../../index.html#clientes" class="nav__link">Clientes</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../contacto.html" class="nav__link nav__link--cta">Contacto</a>
+                        </li>
+                    </ul>
 
-                <!-- Language Switcher -->
-                <div class="nav__lang">
-                    <button class="lang__btn active" data-lang="es">ES</button>
-                    <span class="lang__divider">|</span>
-                    <button class="lang__btn" data-lang="en" onclick="window.location.href='../../en/services/it-consulting.html'">EN</button>
+                    <!-- Language Switcher -->
+                    <div class="nav__lang">
+                        <button class="lang__btn active" data-lang="es">ES</button>
+                        <span class="lang__divider">|</span>
+                        <button class="lang__btn" data-lang="en" onclick="window.location.href='../../en/services/it-consulting.html'">EN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>

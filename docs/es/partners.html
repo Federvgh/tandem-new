@@ -16,6 +16,7 @@
 </head>
 <body>
     <!-- Header -->
+        <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
@@ -29,45 +30,63 @@
                     <span></span>
                 </button>
 
-                <ul class="nav__menu">
-                    <li class="nav__item nav__dropdown">
-                        <a href="#" class="nav__link">
-                            Servicios
-                            <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </a>
-                        <ul class="nav__dropdown-menu">
-                            <li><a href="servicios/monitoreo-24x7.html">Monitoreo 24×7</a></li>
-                            <li><a href="servicios/servicios-gestionados-cloud.html">Servicios Gestionados Cloud</a></li>
-                            <li><a href="servicios/migraciones-cloud.html">Migraciones Cloud</a></li>
-                            <li><a href="servicios/backup-recuperacion.html">Backup y Recuperación</a></li>
-                            <li><a href="servicios/seguridad-compliance.html">Seguridad y Compliance</a></li>
-                            <li><a href="servicios/consultoria-it.html">Consultoría IT</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav__item">
-                        <a href="partners.html" class="nav__link nav__link--active">Partners</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="nosotros.html" class="nav__link">Nosotros</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="valores.html" class="nav__link">Valores</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="../index.html#clientes" class="nav__link">Clientes</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="contacto.html" class="nav__link nav__link--cta">Contacto</a>
-                                        </li>
-                </ul>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link">
+                                Servicios
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="servicios/monitoreo-24x7.html">Monitoreo 24×7</a></li>
+                                <li><a href="servicios/servicios-gestionados-cloud.html">Servicios Gestionados Cloud</a></li>
+                                <li><a href="servicios/migraciones-cloud.html">Migraciones Cloud</a></li>
+                                <li><a href="servicios/backup-recuperacion.html">Backup y Recuperación</a></li>
+                                <li><a href="servicios/seguridad-compliance.html">Seguridad y Compliance</a></li>
+                                <li><a href="servicios/consultoria-it.html">Consultoría IT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="partners.html" class="nav__link active">Partners</a>
+                        </li>
+                        <li class="nav__item nav__dropdown">
+                            <a href="#" class="nav__link">
+                                Nosotros
+                                <svg class="nav__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <ul class="nav__dropdown-menu">
+                                <li><a href="nosotros.html">Quiénes Somos</a></li>
+                                <li><a href="valores.html">Valores</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../index.html#clientes" class="nav__link">Clientes</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="contacto.html" class="nav__link nav__link--cta">Contacto</a>
+                        </li>
+                    </ul>
 
-                <!-- Language Switcher -->
-                <div class="nav__lang">
-                    <button class="lang__btn active" data-lang="es">ES</button>
-                    <span class="lang__divider">|</span>
-                    <button class="lang__btn" data-lang="en" onclick="window.location.href='../en/partners.html'">EN</button>
+                    <!-- Language Switcher -->
+                    <div class="nav__lang">
+                        <button class="lang__btn active" data-lang="es">ES</button>
+                        <span class="lang__divider">|</span>
+                        <button class="lang__btn" data-lang="en" onclick="window.location.href='en/partners.html'">EN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
@@ -152,14 +171,7 @@
                 <!-- Veeam -->
                 <div class="partner-card">
                     <div class="partner-card__logo">
-                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 8L32 32 24 8H16L8 32 0 8H8L12 24 16 8H24L28 24 32 8H40Z" fill="#00B336"/>
-                            <path d="M48 8H64V14H56V18H62V24H56V28H64V34H48V8Z" fill="#00B336"/>
-                            <path d="M72 8H88V14H80V18H86V24H80V28H88V34H72V8Z" fill="#00B336"/>
-                            <path d="M96 8H112L104 34H96L88 8H96L100 24L104 8H112Z" fill="#00B336"/>
-                            <path d="M120 8H136L128 34H120L112 8H120L124 24L128 8H136Z" fill="#00B336"/>
-                            <path d="M144 8H152L160 24 168 8H176V34H168V18L160 34H152L144 18V34H136V8H144V8Z" fill="#00B336"/>
-                        </svg>
+                        <img src="../assets/images/logos/partners/veeam.svg" alt="Veeam">
                     </div>
                     <h3 class="partner-card__name">Veeam</h3>
                     <p class="partner-card__description">
@@ -176,11 +188,7 @@
                 <!-- Fortinet -->
                 <div class="partner-card">
                     <div class="partner-card__logo">
-                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" fill="#EE3124"/>
-                            <path d="M10 10H30V30H10V10Z" fill="white"/>
-                            <path d="M48 20H56V34H48V20ZM60 14H76V20H68V34H60V14ZM80 14H96V20H88V24H94V30H88V34H96V40H80V14ZM100 14H108V34H116V40H100V14ZM120 14H128V40H120V14ZM132 14H148V20H140V24H146V30H140V34H148V40H132V14ZM152 14H168V20H160V40H152V14ZM172 20H180V34H172V20Z" fill="#EE3124"/>
-                        </svg>
+                        <img src="../assets/images/logos/partners/fortinet.svg" alt="Fortinet">
                     </div>
                     <h3 class="partner-card__name">Fortinet</h3>
                     <p class="partner-card__description">
@@ -197,10 +205,7 @@
                 <!-- Sophos -->
                 <div class="partner-card">
                     <div class="partner-card__logo">
-                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 10C14.477 10 10 14.477 10 20V30C10 35.523 14.477 40 20 40C25.523 40 30 35.523 30 30V20C30 14.477 25.523 10 20 10Z" fill="#0091DA"/>
-                            <path d="M40 18H56V24H48V26H54V32H48V34H56V40H40V18ZM60 18H76V24H68V26H74V32H68V34H76V40H60V18ZM80 18H96V24H88V40H80V18ZM100 18H108V34H116V40H100V18ZM120 18H136V24H128V26H134V32H128V34H136V40H120V18ZM140 18H156V24H148V40H140V18Z" fill="#0091DA"/>
-                        </svg>
+                        <img src="../assets/images/logos/partners/sophos.svg" alt="Sophos">
                     </div>
                     <h3 class="partner-card__name">Sophos</h3>
                     <p class="partner-card__description">
