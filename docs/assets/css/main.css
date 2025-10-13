@@ -115,6 +115,7 @@ button {
     line-height: 1.2;
     margin-bottom: 16px;
     color: var(--dark);
+    text-align: center;
 }
 
 .section__description {
@@ -123,6 +124,7 @@ button {
     color: var(--gray);
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Buttons */
