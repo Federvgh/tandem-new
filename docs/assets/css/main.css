@@ -1195,6 +1195,7 @@ button {
     color: var(--white);
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 .page-hero__description {
@@ -1239,6 +1240,7 @@ button {
     color: var(--white);
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 .service-hero__description {
