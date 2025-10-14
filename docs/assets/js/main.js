@@ -95,11 +95,14 @@ langButtons.forEach(btn => {
         // Add active to clicked
         addClass(btn, 'active');
 
+        // Detect if running on GitHub Pages or custom domain (AWS)
+        const basePath = window.location.hostname.includes('github.io') ? '/tandem-new' : '';
+
         // Redirect to appropriate language
         if (lang === 'en') {
-            window.location.href = '/tandem-new/en/index.html';
+            window.location.href = `${basePath}/en/index.html`;
         } else {
-            window.location.href = '/tandem-new/';
+            window.location.href = `${basePath}/`;
         }
     });
 });
