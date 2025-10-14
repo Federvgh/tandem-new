@@ -548,6 +548,112 @@ button {
         radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%);
 }
 
+/* Hero Datacenter Background */
+.hero--datacenter {
+    background: #0A0E27;
+}
+
+.hero__datacenter-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero__datacenter-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 110%;
+    min-height: 110%;
+    width: 110%;
+    height: 110%;
+    transform: translate(-50%, -50%) scale(1);
+    background-image: url('../images/datacenter-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px) brightness(1) contrast(1.05);
+    animation: datacenterVideo 30s ease-in-out infinite;
+}
+
+/* Video-like effect with zoom, pan, and brightness changes */
+@keyframes datacenterVideo {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(5px) brightness(1) contrast(1.05);
+    }
+    25% {
+        transform: translate(-48%, -50%) scale(1.04);
+        filter: blur(5px) brightness(1.05) contrast(1.08);
+    }
+    50% {
+        transform: translate(-50%, -52%) scale(1.08);
+        filter: blur(5px) brightness(0.98) contrast(1.05);
+    }
+    75% {
+        transform: translate(-52%, -50%) scale(1.04);
+        filter: blur(5px) brightness(1.03) contrast(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(5px) brightness(1) contrast(1.05);
+    }
+}
+
+.hero__datacenter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(10, 14, 39, 0.25) 0%,
+        rgba(10, 14, 39, 0.5) 50%,
+        rgba(10, 14, 39, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+/* Subtle scan lines effect for video-like feel */
+.hero__datacenter-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 3px
+    );
+    pointer-events: none;
+    opacity: 0.3;
+    animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(4px);
+    }
+}
+
+/* Ensure content is above the background */
+.hero--datacenter .hero__container {
+    position: relative;
+    z-index: 2;
+}
+
 /* ========================================
    VALUES SECTION
 ======================================== */
@@ -1092,6 +1198,15 @@ button {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    /* Hero Datacenter Mobile - Hide background, use clean gradient */
+    .hero__datacenter-bg {
+        display: none;
+    }
+
+    .hero--datacenter {
+        background: linear-gradient(135deg, #0A0E27 0%, #1E293B 100%);
     }
 
     /* Values */
