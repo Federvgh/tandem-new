@@ -659,7 +659,7 @@ button {
 ======================================== */
 .values {
     padding: var(--section-padding) 0;
-    background: var(--white);
+    background: linear-gradient(180deg, #D6E4FF 0%, #EBF2FF 50%, #FFFFFF 100%);
 }
 
 .values__header {
