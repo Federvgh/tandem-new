@@ -347,7 +347,6 @@ test.describe('Dashboard', () => {
 
 ### UI
 - [ ] Responsive en 3 breakpoints
-- [ ] Dark mode correcto
 - [ ] Loading states
 - [ ] Empty states
 

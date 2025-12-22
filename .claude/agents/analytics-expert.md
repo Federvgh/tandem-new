@@ -74,7 +74,7 @@ Este proyecto tiene integraciones MCP para acceso directo a datos:
     filter: {
       field_name: "eventName",
       in_list_filter: {
-        values: ["login", "report_view", "pdf_download", "analysis_view"]
+        values: ["login", "report_view", "pdf_download"]
       }
     }
   }
@@ -244,11 +244,6 @@ gtag('event', 'report_view', {
 
 // Descargar PDF
 gtag('event', 'pdf_download', {
-  report_id: 'uuid'
-})
-
-// Ver análisis AI
-gtag('event', 'analysis_view', {
   report_id: 'uuid'
 })
 ```

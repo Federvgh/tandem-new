@@ -26,18 +26,9 @@ Verificar que existen en Vercel Dashboard (Settings → Environment Variables):
 **🔴 Críticas (sin estas no funciona):**
 - [ ] `NEXT_PUBLIC_SUPABASE_URL`
 - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- [ ] `SUPABASE_SERVICE_ROLE_KEY`
-- [ ] `ANTHROPIC_API_KEY`
 
 **🟡 Importantes:**
-- [ ] `RESEND_API_KEY` (notificaciones email)
-- [ ] `UPSTASH_REDIS_REST_URL` (rate limiting)
-- [ ] `UPSTASH_REDIS_REST_TOKEN`
 - [ ] `NEXT_PUBLIC_APP_URL` (dominio final)
-
-**🟢 Azure Functions:**
-- [ ] `AZURE_FUNCTIONS_URL`
-- [ ] `AZURE_FUNCTIONS_KEY` (si usa auth)
 
 ### 3. Seguridad
 
@@ -67,17 +58,7 @@ supabase db diff
 # Debe estar vacío si todo está sincronizado
 ```
 
-### 5. Azure Functions
-
-```bash
-# Verificar que las functions están deployadas
-az functionapp list --query "[].{name:name, state:state}"
-
-# Health check
-curl $AZURE_FUNCTIONS_URL/api/health
-```
-
-### 6. Dominio y DNS
+### 5. Dominio y DNS
 
 - [ ] Dominio configurado en Vercel
 - [ ] SSL activo (HTTPS)
@@ -99,12 +80,6 @@ curl $AZURE_FUNCTIONS_URL/api/health
 - [ ] Dashboard carga correctamente
 - [ ] Lista de reportes muestra datos
 - [ ] PDF se puede descargar
-- [ ] Análisis AI funciona
-
-### Notificaciones
-- [ ] Email de nuevo reporte se envía
-- [ ] Template de email se ve bien
-- [ ] Links en email funcionan
 
 ### Edge Cases
 - [ ] Usuario sin reportes ve empty state

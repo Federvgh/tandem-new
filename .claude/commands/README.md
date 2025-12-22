@@ -53,6 +53,18 @@ Review del código seleccionado o de los últimos cambios.
 
 ---
 
+### `/security-check`
+**Verificación de seguridad antes de commit/push:**
+- Secrets hardcodeados en código
+- Archivos .env staged para commit
+- Console.log con datos sensibles
+- Uso incorrecto de Supabase service_role
+- RLS en tablas nuevas
+
+**Usar SIEMPRE antes de commit con cambios sensibles.**
+
+---
+
 ### `/pre-deploy`
 Checklist de verificación antes de deployar:
 - Build sin errores
@@ -71,13 +83,14 @@ Deploy a Vercel con verificaciones.
 
 ```
 .claude/commands/
-├── README.md         # Esta guía
-├── add-client.md     # Onboarding de clientes
-├── new-report.md     # Crear reportes
-├── new-task.md       # Planificación
-├── code-review.md    # Review de código
-├── pre-deploy.md     # Checklist pre-deploy
-└── deploy.md         # Deploy a Vercel
+├── README.md           # Esta guía
+├── add-client.md       # Onboarding de clientes
+├── new-report.md       # Crear reportes
+├── new-task.md         # Planificación
+├── code-review.md      # Review de código
+├── security-check.md   # Verificación pre-commit
+├── pre-deploy.md       # Checklist pre-deploy
+└── deploy.md           # Deploy a Vercel
 ```
 
 ---

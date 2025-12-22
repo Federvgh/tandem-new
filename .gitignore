@@ -35,3 +35,6 @@ Screenshot*.png
 TandemStudio_Servicios_Cloud.pdf
 TandemStudio_Brochure_Extendido.pdf
 Cloud Support.docx
+
+# Environment variables (direnv)
+.envrc

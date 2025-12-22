@@ -35,14 +35,11 @@ Analizar una tarea y crear un plan de implementación estructurado.
 Marcar qué áreas impacta la tarea:
 
 - [ ] **Auth** (`lib/supabase/`) - Autenticación, sesiones
-- [ ] **Database** (`supabase/migrations/`) - Schema, RLS
+- [ ] **Database** (Supabase MCP) - Schema, RLS
 - [ ] **API Routes** (`app/api/`) - Endpoints
 - [ ] **UI Components** (`components/`) - Interfaz
-- [ ] **Reports** (`lib/reports/`) - Generación de reportes
-- [ ] **AI Analysis** (`lib/anthropic/`) - Integración Claude
-- [ ] **Azure Functions** (`azure-functions/`) - Backend pesado
+- [ ] **Reports** - PDF storage y visualización
 - [ ] **Storage** - Supabase Storage
-- [ ] **Email** - Notificaciones
 
 ### 4. Dependencias
 
@@ -132,27 +129,26 @@ Riesgos:
 
 ### Ejemplo: Feature Compleja (L)
 ```
-Tarea: "Agregar comparación de reportes trimestral"
+Tarea: "Agregar filtros de reportes por período"
 
 Tipo: New Feature
 Tamaño: L (2-3 días)
 Archivos:
-- lib/reports/compare.ts
-- app/api/reports/compare/route.ts
-- components/dashboard/ComparisonView.tsx
-- lib/anthropic/comparison-prompt.ts
+- components/dashboard/ReportFilters.tsx
+- app/dashboard/page.tsx
+- lib/types.ts
 
 Pasos:
-1. Diseñar estructura de datos de comparación
-2. Implementar lógica de agregación trimestral
-3. Crear prompt de AI para insights
-4. Implementar UI de visualización
+1. Crear componente de filtros (año, mes)
+2. Implementar query params en URL
+3. Filtrar reportes en servidor
+4. Implementar UI de filtros responsive
 5. Tests unitarios
 6. Tests E2E
 
 Riesgos:
-- Tokens de Claude para reportes grandes
-- Mitigación: Usar Batch API, cachear resultados
+- Performance con muchos reportes
+- Mitigación: Paginación, índices en DB
 ```
 
 ---

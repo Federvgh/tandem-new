@@ -77,22 +77,6 @@ vercel inspect [DEPLOYMENT_URL]
 
 ---
 
-## Deploy de Azure Functions
-
-Si hay cambios en `azure-functions/`:
-
-```bash
-cd azure-functions
-
-# Deploy a Azure
-func azure functionapp publish [FUNCTION_APP_NAME]
-
-# Verificar
-func azure functionapp list-functions [FUNCTION_APP_NAME]
-```
-
----
-
 ## Verificación Post-Deploy
 
 ### Tests Críticos
@@ -112,7 +96,6 @@ func azure functionapp list-functions [FUNCTION_APP_NAME]
 4. **Reportes funcionan**
    - [ ] Click en reporte abre detalle
    - [ ] PDF se puede descargar
-   - [ ] Análisis AI visible
 
 ### Monitoreo Post-Deploy
 
@@ -166,7 +149,6 @@ vercel rollback [DEPLOYMENT_URL]
 | Portal (Producción) | https://portal.tandemstudio.cloud |
 | Vercel Dashboard | https://vercel.com/dashboard |
 | Supabase Dashboard | https://app.supabase.com |
-| Azure Portal | https://portal.azure.com |
 | GitHub Repo | https://github.com/[org]/[repo] |
 
 ---

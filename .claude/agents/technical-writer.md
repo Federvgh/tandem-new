@@ -31,17 +31,21 @@ Usar este agente cuando:
 ├── CLAUDE.md                    # Contexto para AI assistant
 ├── README.md                    # Overview del proyecto
 │
-├── docs/
-│   ├── USER_GUIDE.md           # Guía para clientes
-│   ├── ADMIN_GUIDE.md          # Guía para admins de Tandem
-│   ├── API.md                  # Documentación de API
-│   ├── DEPLOYMENT.md           # Guía de deploy
-│   └── ARCHITECTURE.md         # Decisiones de arquitectura
+├── portal/
+│   └── docs/                   # Documentación del portal
+│       ├── USER_GUIDE.md       # Guía para clientes
+│       ├── ADMIN_GUIDE.md      # Guía para admins de Tandem
+│       ├── API.md              # Documentación de API
+│       └── DEPLOYMENT.md       # Guía de deploy
+│
+├── docs/                        # Landing page HTML (tandemstudio.cloud)
 │
 └── .claude/
     ├── commands/               # Slash commands
     └── agents/                 # Agent definitions
 ```
+
+> **Nota:** La carpeta `/docs/` en la raíz contiene el sitio HTML landing (tandemstudio.cloud). La documentación del portal va en `/portal/docs/`.
 
 ---
 

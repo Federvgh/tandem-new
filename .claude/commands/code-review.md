@@ -68,16 +68,9 @@ Realizar un review exhaustivo del código especificado.
 
 ### Lib Reports (`lib/reports/`)
 
-- [ ] Templates Handlebars válidos
+- [ ] Templates válidos
 - [ ] Manejo de datos faltantes
-- [ ] Escape de HTML donde corresponde
-
-### Lib Anthropic (`lib/anthropic/`)
-
-- [ ] Prompts no hardcodeados (usa constantes)
-- [ ] Manejo de errores de API
-- [ ] Rate limiting considerado
-- [ ] Respuestas parseadas correctamente
+- [ ] Paths de storage correctos
 
 ### Components (`components/`)
 
