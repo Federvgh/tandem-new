@@ -392,6 +392,36 @@ button {
     color: var(--gray-light);
 }
 
+/* Portal Button in Nav */
+.nav__portal {
+    margin-left: 16px;
+}
+
+.nav__portal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--gradient-accent);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav__portal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+}
+
+.nav__portal-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
 /* Mobile Toggle */
 .nav__toggle {
     display: none;
@@ -1143,11 +1173,24 @@ button {
     .nav__lang {
         display: flex;
         margin-left: 0;
-        margin-top: auto;
+        margin-top: 24px;
         padding-top: 24px;
         border-top: 1px solid var(--light);
         width: 100%;
         justify-content: center;
+    }
+
+    .nav__portal {
+        margin-left: 0;
+        margin-top: 16px;
+        width: 100%;
+    }
+
+    .nav__portal-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 1rem;
     }
 
     .nav__dropdown-menu {

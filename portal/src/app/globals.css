@@ -1,53 +1,119 @@
 @import "tailwindcss";
 
-/* Tandem Studio Design System */
+/* ========================================
+   TANDEM STUDIO - PORTAL DESIGN SYSTEM
+   Synchronized with docs/assets/css/design-tokens.css
+======================================== */
+
 :root {
+  /* ========================================
+     COLORS (synced with design-tokens.css)
+  ======================================== */
+
   /* Primary - Azul Tandem */
-  --primary: #0088FF;
-  --primary-dark: #0066CC;
+  --color-primary: #0088FF;
+  --color-primary-dark: #0066CC;
+  --color-primary-light: #3399FF;
 
   /* Accent - Cyan Tech */
-  --accent: #00BFFF;
+  --color-accent: #00BFFF;
+  --color-accent-dark: #0099CC;
 
-  /* Fondos */
-  --dark: #0A0E27;
-  --light: #F8FAFC;
-  --surface: #FFFFFF;
+  /* Neutral - Backgrounds */
+  --color-dark: #0A0E27;
+  --color-dark-light: #1E293B;
+  --color-surface: #FFFFFF;
+  --color-light: #F8FAFC;
 
-  /* Texto */
-  --text-primary: #1A1A2E;
-  --text-secondary: #64748B;
-  --text-light: #94A3B8;
+  /* Neutral - Text */
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
 
-  /* Estados */
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --error: #EF4444;
+  /* Semantic - States */
+  --color-success: #22C55E;
+  --color-success-light: #4ADE80;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FBBF24;
+  --color-error: #EF4444;
+  --color-error-light: #F87171;
 
-  /* Background */
-  --background: var(--light);
-  --foreground: var(--text-primary);
+  /* ========================================
+     GRADIENTS
+  ======================================== */
+  --gradient-primary: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-light) 100%);
+  --gradient-accent: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+
+  /* ========================================
+     SPACING (8px base scale)
+  ======================================== */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* ========================================
+     BORDER RADIUS
+  ======================================== */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+
+  /* ========================================
+     SHADOWS
+  ======================================== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-accent: 0 8px 32px rgba(0, 136, 255, 0.25);
+
+  /* ========================================
+     LEGACY ALIASES (for backward compatibility)
+  ======================================== */
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-dark);
+  --accent: var(--color-accent);
+  --dark: var(--color-dark);
+  --light: var(--color-light);
+  --surface: var(--color-surface);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --error: var(--color-error);
+
+  /* Background/Foreground */
+  --background: var(--color-light);
+  --foreground: var(--color-text-primary);
 }
 
+/* ========================================
+   TAILWIND THEME MAPPING
+======================================== */
 @theme inline {
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-accent: var(--accent);
-  --color-dark: var(--dark);
-  --color-surface: var(--surface);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-error: var(--error);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-accent: var(--color-accent);
+  --color-dark: var(--color-dark);
+  --color-surface: var(--color-surface);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--text-secondary);
-  --color-muted-foreground: var(--text-light);
+  --color-muted: var(--color-text-secondary);
+  --color-muted-foreground: var(--color-text-muted);
 
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
-/* Typography */
+/* ========================================
+   TYPOGRAPHY
+======================================== */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -64,27 +130,33 @@ h2 { font-size: 2.25rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
 
-/* Focus styles */
+/* ========================================
+   FOCUS STYLES (Accessibility)
+======================================== */
 *:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* Smooth scrolling */
+/* ========================================
+   SMOOTH SCROLLING
+======================================== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom utilities */
+/* ========================================
+   UTILITY CLASSES
+======================================== */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card {
-  background: var(--surface);
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
