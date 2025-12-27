@@ -1,23 +1,55 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
-import { Mail, CheckCircle } from 'lucide-react'
+import { Mail, CheckCircle, KeyRound } from 'lucide-react'
 
 const supabase = createClient()
 
 const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
 export default function LoginPage() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
+  const [usePassword, setUsePassword] = useState(false)
 
-  const handleLogin = async (e: React.FormEvent) => {
+  // Password login (for testing)
+  const handlePasswordLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+
+    if (!isValidEmail(email)) {
+      setError('Email inválido')
+      setLoading(false)
+      return
+    }
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+
+    if (error) {
+      setError(error.message)
+      setLoading(false)
+      return
+    }
+
+    router.push('/dashboard')
+    router.refresh()
+  }
+
+  // Magic Link login
+  const handleMagicLinkLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError('')
@@ -64,7 +96,9 @@ export default function LoginPage() {
             <CardDescription>
               {sent
                 ? 'Te enviamos un link de acceso'
-                : 'Ingresá tu email para recibir un link de acceso'}
+                : usePassword
+                  ? 'Ingresá tus credenciales'
+                  : 'Ingresá tu email para recibir un link de acceso'}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -90,8 +124,51 @@ export default function LoginPage() {
                   Usar otro email
                 </Button>
               </div>
+            ) : usePassword ? (
+              // Password login form
+              <form onSubmit={handlePasswordLogin} className="space-y-4">
+                <Input
+                  type="email"
+                  label="Email"
+                  placeholder="tu@empresa.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  autoFocus
+                />
+                <Input
+                  type="password"
+                  label="Contraseña"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  error={error}
+                  required
+                />
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  loading={loading}
+                >
+                  <KeyRound className="w-4 h-4 mr-2" />
+                  Iniciar Sesión
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="w-full"
+                  onClick={() => {
+                    setUsePassword(false)
+                    setError('')
+                  }}
+                >
+                  Usar Magic Link
+                </Button>
+              </form>
             ) : (
-              <form onSubmit={handleLogin} className="space-y-4">
+              // Magic Link form
+              <form onSubmit={handleMagicLinkLogin} className="space-y-4">
                 <Input
                   type="email"
                   label="Email"
@@ -111,13 +188,27 @@ export default function LoginPage() {
                   <Mail className="w-4 h-4 mr-2" />
                   Enviar link de acceso
                 </Button>
+                {/* Testing only - password login toggle */}
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="w-full text-xs"
+                  onClick={() => {
+                    setUsePassword(true)
+                    setError('')
+                  }}
+                >
+                  Usar contraseña (testing)
+                </Button>
               </form>
             )}
           </CardContent>
         </Card>
 
         <p className="text-center text-xs text-gray-500 mt-6">
-          Usamos Magic Links para un acceso seguro sin contraseñas
+          {usePassword
+            ? 'Login con contraseña (solo para testing)'
+            : 'Usamos Magic Links para un acceso seguro sin contraseñas'}
         </p>
       </div>
     </div>
